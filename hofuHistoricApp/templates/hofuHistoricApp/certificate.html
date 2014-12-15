@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+{% load static %}
+<head>
+	<title>HOFU Database - Certificate</title>
+	<link REL="stylesheet" TYPE="text/css" HREF="{{STATIC_URL}}hofuHistoricApp/css/style.css"/>
+</head>
+
+<body>
+<div id="certificate">
+<div id="header">
+	<div id="title">
+		<p class="header">Hopewell Furnace<p>
+	</div>
+	<div id="logo">
+		<img id ="logo" border="0" src="{{STATIC_URL}}hofuHistoricApp/images/ah_medium_black.gif" alt="Arrowhead" width="55" height="71" align="left">
+	</div>
+	<div id="nps">
+		<p class="nps">National Park Service<br>U.S. Department of the Interior</p>
+	</div>
+</div>
+
+<div id="certBody">
+
+<p class="certLarge">
+Presented by<br>
+Hopewell Furnace National Historic Site<br>
+</p>
+<p class="certLarge">
+{{ labordyn.firstname }} {{ labordyn.lastname }}<br>
+</p>
+
+<p class="certSmall">ancestor of<br>
+</p>
+
+<p class="certLarge">{{ name }}<br>
+</p>
+
+<p class="certSmall">worked at Hopewell Furnace<br>
+</p>
+</div>
+
+</div>
+
+</body>

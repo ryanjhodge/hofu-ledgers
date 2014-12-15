@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+{% load static %}
+
+<head>
+	<title>HOFU Database - Results</title>
+	<link REL="stylesheet" TYPE="text/css" HREF="{{STATIC_URL}}hofuHistoricApp/css/style.css"/>
+	
+	<script>
+		function myFunction(input) {
+			if (input!=null) {
+				var person = prompt("Please enter your name");
+				var url = "/ledgers/hofuHistoricApp/pdf/" + input + "/" + person
+				if (person==null) {
+					document.getElementById(input).href = document.URL
+				}
+				else {
+					document.getElementById(input).href = url
+				}
+			}
+		}
+	</script>
+	
+</head>
+
+<body>
+<div id="header">
+	<div id="title">
+		<p class="header">Hopewell Furnace National Historic Site<p>
+	</div>
+	<div id="logo">
+		<img id ="logo" border="0" src="{{STATIC_URL}}hofuHistoricApp/images/ah_medium_black.gif" alt="Arrowhead" width="55" height="71" align="left">
+	</div>
+	<div id="nps">
+		<p class="nps">National Park Service<br>U.S. Department of the Interior</p>
+	</div>
+</div>
+
+<div class="container">
+
+<h1>Search Results</h1>
+<div class="contentRight">
+		<h2><a href="/ledgers/hofuHistoricApp/export">Export to Excel</a></h2>
+</div>
+	<div class="contentLeft">
+		<h2><a href="/">New Search</a></h2>
+	</div>
+<div class="content">
+	
+<div class="table">
+{% if results_list %}
+<table border="1" id="table-1">
+	<thead>
+		<tr>
+			<th>Print Certificate</th>
+			<th>Last Name</th>
+			<th>First Name</th>
+			<th>Gender</th>
+			<th>Race</th>
+			<th>Occupation 1</th>
+			<th>Occ1 Start</th>
+			<th>Occ1 End</th>
+			<th>Occupation 2</th>
+			<th>Occ2 Start</th>
+			<th>Occ2 End</th>
+			<th>Occupation 3</th>
+			<th>Occ3 Start</th>
+			<th>Occ3 End</th>
+			<th>Occupation 4</th>
+			<th>Occupation 5</th>
+			<th>Notes</th>
+		</tr>
+	</thead>
+    
+	<tbody>
+	{% for result in results_list %}
+	<tr>
+		<td><a id="{{result.id}}" href="#{{result.id}}" onclick="myFunction({{result.id}});">Certificate</a></td>
+		<td>{{ result.lastname|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.firstname|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.gender|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.race|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.occup1|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenurefrom|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenureto|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.occup2|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenurefr2|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenureto2|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.occup3|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenurefr3|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.tenureto3|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.occup4|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.occup5|default_if_none:"&nbsp;" }}</td>
+		<td>{{ result.notes }}</td>
+	{% endfor %}
+    </tr>
+	{% else %}
+	<br>
+    <h2>No Records Found.</h2>
+    <br>
+	{% endif %}
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,152 @@
+* { margin: 0; padding: 0 }
+
+body {
+	font-family:helvetica,sans-serif,arial;
+	background:url(../images/page.gif);
+	background-color:#F4EFDD;
+	margin: 0px;
+	background-position:50% 0;
+	background-repeat:no-repeat no-repeat;
+	}
+
+div.container {
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+div.content {
+	overflow: auto;
+	width: 90%;
+	background: #FFFFFF;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top:50px;
+	padding: 0px;
+	-webkit-box-shadow: 0px 0px 20px 0px black;
+	-moz-box-shadow:    0px 0px 20px 0px black;
+	box-shadow:         0px 0px 20px 0px black;
+}
+
+div#search {
+	width:1000px;
+}
+
+div#searchColumn {
+	height:220px;
+}
+
+div.innerDiv {
+	padding:15px;
+}
+
+div.contentLeft {
+	float:left;
+	width:50%;
+}
+
+div.contentRight {
+	float:right;
+	width:50%;
+}
+
+div.bottom {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+div.table {
+	max-height: 500px;
+}
+
+div#certificate {
+	height:861px;
+}
+
+div#certBody {
+	text-align:center;
+}
+
+div#header {
+	display: block;
+	height: 100px;
+	background: black;
+	color: white;
+	clear: both;
+	min-width: 1200px;
+}
+
+div#title {
+	float:left;
+	height: 100%;
+	width:60%;
+	min-width:800px
+}
+
+div#nps {
+	height:100%;
+	width:20%;
+	float:right;
+}
+
+div#logo {
+	height: 100%;
+	width: 100px;
+	float:right;
+}
+
+img#logo {
+	padding-top:10px
+}
+
+p.header{
+	text-align:left;
+	font-size:40px;
+	padding: 5px 0px 0px 30px;
+}
+
+p.nps {
+	text-align:left;
+	font-size:14px;
+	padding:10px 15px 0px 0px;
+	float:right;
+}
+
+p.certLarge {
+	font-size:70px;
+	font-weight:bold;
+	padding-top:20px;
+}
+
+p.certSmall {
+	font-size:50px;
+	font-weight:bold;
+	padding-top:20px;
+}
+
+h1 {
+	text-align:center;
+	font-size:40px;
+}
+
+h2 {
+	text-align:center;
+	font-size:20px;
+	padding-bottom:10px;
+}
+
+h1.navLeft {
+	float:left;
+	font-size:20px;
+}
+
+h1.navRight {
+	float:right;
+	font-size:20px;
+}
+
+ul.parameters {
+	list-style: none;
+	padding-left:20px;
+}

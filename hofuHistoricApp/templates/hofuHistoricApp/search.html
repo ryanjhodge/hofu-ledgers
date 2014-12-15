@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+{% load static %}
+
+<head>
+<title>HOFU Database - Search</title>
+<link REL="stylesheet" TYPE="text/css" HREF="{{STATIC_URL}}hofuHistoricApp/css/style.css"/>
+</head>
+
+<body>
+<div id="header">
+	<div id="title">
+		<p class="header">Hopewell Furnace National Historic Site<p>
+	</div>
+	<div id="logo">
+		<img id ="logo" border="0" src="{{STATIC_URL}}/hofuHistoricApp/images/ah_medium_black.gif" alt="Arrowhead" width="55" height="71" align="left">
+	</div>
+	<div id="nps">
+		<p class="nps">National Park Service<br>U.S. Department of the Interior</p>
+	</div>
+</div>
+
+<div class="container" id="search">
+<h1>Search</h1>
+
+<div class="content" id="search">
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form method="get" action="/ledgers/hofuHistoricApp/search/">
+	<div class="contentLeft" id="searchColumn">
+	<div class="innerDiv">
+	<table>
+		<tr>
+			<td>First name: </td>
+			<td><input type="text" name="firstname"></td>
+		</tr>
+		<tr>
+			<td>Last name: </td>
+			<td><input type="text" name="lastname"></td>
+		</tr>
+	</table>
+	<br>Gender, Corporation or African American:<br>
+	<ul class="parameters">
+		<li><input type="checkbox" name="sexM" value="M">Male (M)</li>
+		<li><input type="checkbox" name="sexF" value="F">Female (F)</li>
+		<li><input type="checkbox" name="sexC" value="C">Corporation (C)</li>
+		<li><input type="checkbox" name="africanAmerican" value="A">African American (A)</li>
+	</ul><br>
+	<table>
+		<tr>
+			<td>Year (After/From): </td>
+			<td><input type="text" name="yearAfter"></td>
+		</tr>
+		<tr>
+			<td>Year (Before/To): </td>
+			<td><input type="text" name="yearBefore"></td>
+		</tr>
+	</table>
+	</div>
+	</div>
+
+	<div class="contentRight" id="searchColumn">
+	<div class="innerDiv">
+	<p class="parameter">Occupation(s):<br></p>
+		<div style="float: left; width: 50%;">
+			<ul class="parameters">
+				<li><input type="checkbox" name="ocCollier" value="collier">Collier</li>
+				<li><input type="checkbox" name="ocFiller" value="filler">Filler</li>
+				<li><input type="checkbox" name="ocGutterman" value="gutterman">Gutterman</li>
+				<li><input type="checkbox" name="ocTeamster" value="teamster">Teamster</li>
+				<li><input type="checkbox" name="ocBlacksmith" value="blacksmith">Blacksmith</li>
+				<li><input type="checkbox" name="ocFounder" value="founder">Founder</li>
+				<li><input type="checkbox" name="ocWoodcutter" value="woodcutter">Woodcutter</li>
+				<li><input type="checkbox" name="ocHiredGirl" value="hired girl">Hired Girl</li>
+			</ul>
+			</div>
+			<div style="float: left; width: 50%;">
+			<ul class="parameters">
+				<li><input type="checkbox" name="ocStoveDealer" value="stove dealer">Stove Dealer</li>
+				<li><input type="checkbox" name="ocMason" value="mason">Mason</li>
+				<li><input type="checkbox" name="ocTailor" value="tailor">Tailor</li>
+				<li><input type="checkbox" name="ocHousework" value="housework">Housework</li>
+				<li><input type="checkbox" name="ocMoulder" value="moulder">Moulder</li>
+				<li><input type="checkbox" name="ocCarpenter" value="carpenter">Carpenter</li>
+				<li><input type="checkbox" name="ocShoemaker" value="shoemaker">Shoemaker</li>
+				<li><input type="checkbox" name="ocCCC" value="ccc">Civilian Conservation Corps</li>
+			</ul>
+			</div>
+	</div>
+	</div>
+	<div class="bottom">
+		<input type="submit" value="Search" style="width: 150px; height:25px;">
+	</div>
+</form>
+</div>
+</div>
