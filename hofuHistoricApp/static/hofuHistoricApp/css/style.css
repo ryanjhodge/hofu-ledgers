@@ -18,7 +18,7 @@ div.container {
 div.content {
 	overflow: auto;
 	width: 90%;
-	background: #FFFFFF;
+	background: white;
 	margin: 0 auto;
 	margin-bottom: 50px;
 	margin-top:50px;
@@ -57,6 +57,7 @@ div.bottom {
 }
 
 div.table {
+	padding: 20px;
 	max-height: 500px;
 }
 
@@ -149,4 +150,15 @@ h1.navRight {
 ul.parameters {
 	list-style: none;
 	padding-left:20px;
+}
+
+#cover {
+    background: url("http://www.aveva.com/Images/ajax-loader.gif") no-repeat scroll center center #FFF;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#datatable_length {
+	margin:10px;
 }

@@ -12,6 +12,7 @@ import time
 from django.conf import settings
 import os.path
 
+
 def index(request):
     return render(request, 'hofuHistoricApp/search.html')
 

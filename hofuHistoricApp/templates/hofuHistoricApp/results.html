@@ -1,11 +1,33 @@
 <!DOCTYPE HTML>
 {% load static %}
-
 <head>
 	<title>HOFU Database - Results</title>
+	
+	<style>
+		/* This only works with JavaScript, 
+		   if it's not present, don't show loader */
+		.no-js #loader { display: none;  }
+		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+	</style>
+	
 	<link REL="stylesheet" TYPE="text/css" HREF="{{STATIC_URL}}hofuHistoricApp/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+	
+	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 	
 	<script>
+	
+	$(window).load(function(){
+	    $('#cover').hide();
+	});
+	
+	$(document).ready(function(){
+	    $('#datatable').DataTable({
+	    	
+	    });
+	});
+	
 		function myFunction(input) {
 			if (input!=null) {
 				var person = prompt("Please enter your name");
@@ -23,6 +45,9 @@
 </head>
 
 <body>
+
+<div id="cover"></div>
+
 <div id="header">
 	<div id="title">
 		<p class="header">Hopewell Furnace National Historic Site<p>
@@ -46,9 +71,11 @@
 	</div>
 <div class="content">
 	
+
+	
 <div class="table">
 {% if results_list %}
-<table border="1" id="table-1">
+<table border="1" id="datatable" class="nowrap compact display">
 	<thead>
 		<tr>
 			<th>Print Certificate</th>
